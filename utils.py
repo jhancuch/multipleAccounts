@@ -28,12 +28,17 @@ def twitter_embed(url1 = None, url2 = None, url3 = None, url4 = None):
     if url4 is not None:
         html.append(twitter_selenium(tw, url4))
 
-
     urls_list_temp = [re.sub(r'&gt;', '>', k) for k in html]
     urls_list = [re.sub(r'&lt;', '<', k) for k in urls_list_temp]
-    print(urls_list)
+
+    return urls_list
 
 def twitter_selenium(driver, path):
+    """
+    blah blah blah
+    Parameters:
+    Returns:
+    """
     driver.get('https://publish.twitter.com/')
     time.sleep(1)
     
@@ -54,6 +59,8 @@ def twitter_selenium(driver, path):
 
     for i in html_content:
         html.append(i.get_attribute('innerHTML'))
+
+    html = ''.join(html)
 
     return html
 
