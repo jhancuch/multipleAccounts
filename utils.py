@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
-def twitter_embed(url1 = None, url2 = None, url3 = None, url4 = None):
+def twitter_embed(url1 = None, url2 = None, url3 = None):
     """
     blah blah blah
     Parameters:
@@ -25,8 +25,6 @@ def twitter_embed(url1 = None, url2 = None, url3 = None, url4 = None):
     if url3 is not None:
         html.append(twitter_selenium(tw, url3))
 
-    if url4 is not None:
-        html.append(twitter_selenium(tw, url4))
 
     urls_list_temp = [re.sub(r'&gt;', '>', k) for k in html]
     urls_list = [re.sub(r'&lt;', '<', k) for k in urls_list_temp]
